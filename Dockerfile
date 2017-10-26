@@ -28,7 +28,8 @@ RUN echo "deb-src http://deb.debian.org/debian stretch main" >> /etc/apt/sources
     rm -rf /tmp/sip* /tmp/pyqt*
 
 # this lets pip acknowledge that pyqt is actually already installed
-RUN cd /usr/local/lib/python${PYVER}/site-packages && \
+RUN export PYTHON_SITE_DIR=$(python -c "import site; print(site.getsitepackages()[0])") && \
+    cd ${PYTHON_SITE_DIR} && \
     mkdir ${INFODIR} && \
     echo PyQt5 > ${INFODIR}/top_level.txt && \
     echo manual > ${INFODIR}/INSTALLER && \
