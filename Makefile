@@ -11,4 +11,6 @@ $(PYTHONS):
 push:
 	docker push pymor/pyqt5
 
+run:
+	docker run --rm -it pymor/pyqt5:py3.5 bash
 all: pythons
