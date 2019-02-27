@@ -12,7 +12,7 @@ RUN echo "deb-src http://deb.debian.org/debian stretch main" >> /etc/apt/sources
     apt-get remove -y python3-sip && apt-get source python3-sip && \
     cd /tmp/sip4-4.18.1+dfsg && \
     python configure.py && \
-    make && \
+    make -j "$(nproc)" && \
     make install && \
     cd /tmp/pyqt5-${PYQT_VERSION}+dfsg && \
     python configure.py --no-designer-plugin --no-qml-plugin --no-qsci-api \
