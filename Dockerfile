@@ -1,6 +1,6 @@
-ARG PYVER=3.5
+ARG PYVER=3.7
 FROM pymor/python:$PYVER
-MAINTAINER René Milk <rene.milk@wwu.de>
+MAINTAINER René Fritze <rene.fritze@wwu.de>
 
 ENV PYQT_VERSION=5.7
 ENV INFODIR=pyqt5-${PYQT_VERSION}.dist-info
