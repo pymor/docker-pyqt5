@@ -6,7 +6,7 @@ pythons: $(PYTHONS)
 
 $(PYTHONS):
 	docker build --build-arg PYVER=$@ \
-		-t pymor/pyqt5:py$@ .
+		-t pymor/pyqt5:py$@ docker
 
 push:
 	docker push pymor/pyqt5
